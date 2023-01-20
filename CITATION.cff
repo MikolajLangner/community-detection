@@ -1,0 +1,29 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Clustering via Random Walks
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Mikołaj
+    name-particle: Mikołaj
+    family-names: Langner
+    email: mikolaj.langner@outlook.com
+repository-code: 'https://github.com/MikolajLangner/community-detection'
+abstract: >-
+  Community detection is a fundamental task of complex
+  networks analysis. The detection problem is noteworthy
+  because there is no the best method --- various approaches
+  guarantee different properties of detected communities.
+  This paper describes the SynWalk method, introduces some
+  extensions and compares it with classical algorithms based
+  on random walks.
+keywords:
+  - community detection
+  - random walks
+  - louvain
+  - graph clustering
+version: 1.0.0
