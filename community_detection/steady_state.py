@@ -2,17 +2,17 @@ import numpy as np
 from scipy import sparse
 
 
-def steady_state(transition: sparse.base.spmatrix, damping: float = .85, tol: float = 1e-3):
+def steady_state(transition: sparse.spmatrix, damping: float = .85, tol: float = 1e-6):
 
-    n = transition.shape[0]
-    antidamp = (1 - damping) / n
+    N = transition.shape[0]
+    antidamp = (1 - damping) / N
     matrix = transition * damping
 
-    stationary = np.ones(n, dtype=np.float32) / n
+    stationary = np.ones(N, dtype=np.float32) / N
     next_stationary = stationary @ matrix + antidamp
 
     while np.linalg.norm(next_stationary - stationary) > tol:
         stationary = next_stationary
         next_stationary = stationary @ matrix + antidamp
 
-    return next_stationary
+    return sparse.csr_matrix(next_stationary)
